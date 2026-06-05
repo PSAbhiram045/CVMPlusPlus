@@ -6,7 +6,7 @@ BUILDING (Windows / MinGW)
 --------------------------
 From your terminal, clone the repository and navigate into the project root:
 
-  > git clone https://github.com/PSAbhiram045/CVM.git
+  > git clone https://github.com/PSAbhiram045/CVMPlusPlus.git
   > cd CVM
 
 Then, run the following commands to build via CMake:
@@ -18,7 +18,7 @@ Then, run the following commands to build via CMake:
 
 OVERVIEW
 --------
-CVM++ is a custom programming language built entirely from scratch in C++.
+CVM++ is a custom programming language and execution engine built entirely from scratch in modern C++17. The project implements a complete compiler pipeline, including a lexer, recursive-descent parser, bytecode compiler, and stack-based virtual machine.
 Rather than relying on existing interpreter tools or wrappers, we wrote the
 entire pipeline by hand. Source code is processed through a custom lexer, a
 recursive-descent parser, a bytecode compiler, and finally a stack-based
@@ -29,6 +29,17 @@ The language supports variables, arithmetic, comparisons, conditionals
 algorithm from Fibonacci to sorting. We built this project to peel back the
 layers of abstraction and understand exactly how raw text on a screen is
 transformed into executable instructions.
+
+FEATURES
+--------
+- Hand-written lexer and recursive-descent parser
+- Bytecode compiler with jump backpatching
+- Stack-based virtual machine
+- Integer and boolean support
+- if/else conditionals and while loops
+- Interactive REPL
+- Bytecode disassembler
+- Smart-pointer based AST ownership
 
 HOW IT WORKS (THE PIPELINE)
 ---------------------------
@@ -101,8 +112,7 @@ PROJECT LAYOUT
 
 DESIGN PHILOSOPHY
 -----------------
-The goal of this project was to build a complete, working compiler pipeline
-end to end rather than a massive language feature set. By focusing on core
+The goal of this project was to build a complete compiler and virtual machine pipeline end-to-end rather than maximize language features. By focusing on core
 data types (integers and booleans), foundational arithmetic, and basic
 control flow, we were able to keep every stage testable in isolation. AST node
 ownership is handled with smart pointers rather than manual new/delete, which
