@@ -1,0 +1,14 @@
+
+
+let val1 = input;
+let val2 = input;
+let op   = input;
+
+let result = 0;
+
+if op == 1 { result = val1 + val2; }
+if op == 2 { result = val1 - val2; }
+if op == 3 { result = val1 * val2; }
+if op == 4 { result = val1 / val2; }
+
+print result;

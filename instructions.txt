@@ -1,0 +1,76 @@
+======================================================
+CVM++ : Language Syntax & Instructions 
+======================================================
+CVM++ has a minimal syntax by design. This Text File covers all Language Syntax.
+
+1. GENERAL RULES
+----------------
+- Every statement (except block structures like if/while) must end with
+  a semicolon (;).
+- Code blocks must be enclosed in curly braces { }.
+- The language is evaluated top to bottom.
+
+2. DATA TYPES
+-------------
+CVM++ supports two data types:
+  - Integers : Whole numbers (e.g., 0, 10, -5, 42)
+  - Booleans : The keywords 'true' and 'false'
+
+3. VARIABLES & USER INPUT (I/O)
+-------------------------------
+Use the 'let' keyword to declare a new variable. Once declared, you can
+reassign it without the 'let' keyword.
+
+  let score = 100;
+  score = score + 50;
+
+To pause the program and ask the user to type a number, assign a variable 
+to the 'input' keyword:
+
+  let age = input;  // VM will pause and wait for user input
+
+4. PRINTING OUTPUT
+------------------
+Use the 'print' keyword followed by an expression and a semicolon to
+output a value to the console.
+
+  let score = 5;
+  print score;      // VM Output: 5
+  print true;       // VM Output: true
+
+5. ARITHMETIC & COMPARISONS
+----------------------------
+CVM++ follows standard mathematical order of operations.
+
+  Arithmetic  :  +, -, *, /
+  Comparisons :  < (less than), == (equal to)
+
+  let mathTest = 10 + 2 * 3;   // Evaluates to 16, not 36
+  let isLess   = 5 < 10;       // Evaluates to true
+
+6. CONTROL FLOW: IF / ELSE
+--------------------------
+Use 'if' and 'else' for conditional logic. The condition does not require
+parentheses, but the body must be wrapped in curly braces { }.
+
+  let power = 9000;
+
+  if power < 10000 {
+      print false;
+  } else {
+      print true;
+  }
+
+7. CONTROL FLOW: WHILE LOOPS
+-----------------------------
+Use the 'while' keyword to create a loop. It runs as long as the condition
+evaluates to true (or a non-zero integer).
+
+  let limit = 3;
+  let count = 0;
+
+  while count < limit {
+      print count;
+      count = count + 1;
+  }
+
